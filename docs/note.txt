@@ -1,0 +1,6 @@
+
+数据库表
+
+adi_ai_model   AI模型表
+
+adi_sys_config      系统配置表|url|apikey

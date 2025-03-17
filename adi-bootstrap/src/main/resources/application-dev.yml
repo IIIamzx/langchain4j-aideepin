@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/aideepin?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&tinyInt1isBit=false&allowMultiQueries=true
+    url: jdbc:postgresql://10.211.55.7:5432/aideepin?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&tinyInt1isBit=false&allowMultiQueries=true
     username: postgres
-    password: 123456
+    password: postgres
     hikari:
       connection-timeout: 10000
       validation-timeout: 3000
@@ -15,7 +15,7 @@ spring:
       read-only: false
   data:
     redis:
-      host: localhost
+      host: 10.211.55.7
       port: 6379
       password:
       database: 0
