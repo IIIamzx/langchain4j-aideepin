@@ -1,6 +1,28 @@
 
+-----------开启pgvector和age插件-----------------
+
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE EXTENSION IF NOT EXISTS age;
+LOAD 'age';
+
+
+
 数据库表
 
-adi_ai_model   AI模型表
+adi_ai_model   AI模型表,包含模型基本信息
 
 adi_sys_config      系统配置表|url|apikey
+
+
+
+-----------初始化配置-----------------
+
+AIzaSyDVfo19OmiPKo3DoTobUG2vT35WpmMqO8E   Google Cloud API
+b771131ee46974c38               搜索引擎id
+
+初始化谷歌搜索引擎
+
+update adi_sys_config set value = '{"url":"https://www.googleapis.com/customsearch/v1","key":"AIzaSyDVfo19OmiPKo3DoTobUG2vT35WpmMqO8E","cx":"b771131ee46974c38"}' where name = 'google_setting';
+
+
