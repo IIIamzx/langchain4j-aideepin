@@ -25,14 +25,17 @@ spring:
       time-to-live: 1h
   mail:
     default-encoding: UTF-8
-    protocol: smtps
-    host: your-email-host  # smtp.exmail.qq.com
-    username: your-email-username # xxx@qq.com
-    password: your-email-password
+    protocol: smtp
+    host: smtp.qq.com  # smtp.exmail.qq.com
+    username: 1735911125@qq.com # xxx@qq.com
+    password: fdtujpnnphalcgjc
     port: 465
     properties:
       mail:
         smtp:
+          auth: true       # 启用身份验证
+          starttls:
+            enable: false  # 启用STARTTLS
           ssl:
             enable: true
   servlet:
