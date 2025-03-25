@@ -66,6 +66,9 @@ public class ConversationMessageService extends ServiceImpl<ConversationMessageM
         return sseEmitter;
     }
 
+    /**
+     * 对话检查： 是否删除｜对话数量｜对话额度
+     */
     private boolean checkConversation(SseEmitter sseEmitter, User user, AskReq askReq) {
         try {
 
@@ -110,7 +113,7 @@ public class ConversationMessageService extends ServiceImpl<ConversationMessageM
     @Async
     public void asyncCheckAndPushToClient(SseEmitter sseEmitter, User user, AskReq askReq) {
         log.info("asyncCheckAndPushToClient,userId:{}", user.getId());
-        //check business rules
+        //check business rules 对话检查： 是否删除｜对话数量｜对话额度
         if (!checkConversation(sseEmitter, user, askReq)) {
             return;
         }
@@ -133,12 +136,12 @@ public class ConversationMessageService extends ServiceImpl<ConversationMessageM
         sseAskParams.setSseEmitter(sseEmitter);
         sseAskParams.setRegenerateQuestionUuid(askReq.getRegenerateQuestionUuid());
 
-        //Assistant parameters
+        //Assistant parameters 加载默认System配置
         AssistantChatParams.AssistantChatParamsBuilder assistantBuilder = AssistantChatParams.builder();
         if (StringUtils.isNotBlank(conversation.getAiSystemMessage())) {
             assistantBuilder.systemMessage(conversation.getAiSystemMessage());
         }
-        //history message
+        //history message  多轮对话消息ID
         if (Boolean.TRUE.equals(conversation.getUnderstandContextEnable())) {
             assistantBuilder.messageId(askReq.getConversationUuid());
         }

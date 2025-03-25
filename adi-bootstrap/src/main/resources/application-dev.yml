@@ -32,7 +32,7 @@ spring:
 
 logging:
   file:
-    path: D:/data/aideepin/logs
+    path: /Users/zhangxin/code/data/aideepin/logs
   level:
     com.baomidou.mybatisplus: DEBUG
 
@@ -45,10 +45,10 @@ adi:
     http-port: 1087
 
 local:
-  files: D:/data/aideepin/files/
-  images: D:/data/aideepin/images/
-  watermark-images: D:/data/aideepin/mark-images/
-  thumbnails: D:/data/aideepin/thumbnails/
-  watermark-thumbnails: D:/data/aideepin/watermark-thumbnails/
-  tmp-images: D:/data/aideepin/tmp_images/
-  chat-memory: D:/data/aideepin/chat_memory/
+  files: /Users/zhangxin/code/data/aideepin/files/
+  images: /Users/zhangxin/code/data/aideepin/images/
+  watermark-images: /Users/zhangxin/code/data/aideepin/mark-images/
+  thumbnails: /Users/zhangxin/code/data/aideepin/thumbnails/
+  watermark-thumbnails: /Users/zhangxin/code/data/aideepin/watermark-thumbnails/
+  tmp-images: /Users/zhangxin/code/data/aideepin/tmp_images/
+  chat-memory: /Users/zhangxin/code/data/aideepin/chat_memory/

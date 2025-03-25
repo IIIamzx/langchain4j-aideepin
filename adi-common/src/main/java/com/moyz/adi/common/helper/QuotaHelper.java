@@ -15,6 +15,9 @@ public class QuotaHelper {
     @Resource
     private UserDayCostService userDayCostService;
 
+    /**
+     * 是否超过当天额度和当月额度
+     */
     public ErrorEnum checkTextQuota(User user) {
         int userQuotaByTokenDay = user.getQuotaByTokenDaily();
         int userQuotaByTokenMonth = user.getQuotaByTokenMonthly();

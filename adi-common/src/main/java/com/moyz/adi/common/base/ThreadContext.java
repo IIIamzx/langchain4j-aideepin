@@ -6,6 +6,9 @@ import io.micrometer.common.util.StringUtils;
 
 import static com.moyz.adi.common.enums.ErrorEnum.A_USER_NOT_FOUND;
 
+/**
+ * 存储当前线程用户和token
+ */
 public class ThreadContext {
     private static final ThreadLocal<User> currentUser = new ThreadLocal<>();
     private static final ThreadLocal<String> currentToken = new ThreadLocal<>();

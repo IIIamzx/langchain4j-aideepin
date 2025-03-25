@@ -38,6 +38,9 @@ public class SSEEmitterHelper {
     @Resource
     private RateLimitHelper rateLimitHelper;
 
+    /**
+     * 是否访问频繁或者正在回复中
+     */
     public boolean checkOrComplete(User user, SseEmitter sseEmitter) {
         //Check: rate limit
         String requestTimesKey = MessageFormat.format(RedisKeyConstant.USER_REQUEST_TEXT_TIMES, user.getId());
