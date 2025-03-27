@@ -106,7 +106,7 @@ public class AiModelSettingService {
         LLMContext.clearByPlatform(platform);
         for (AiModel model : models) {
             log.info("add llm model,model:{}", model);
-            LLMContext.addLLMService(function.apply(model));
+            LLMContext.addLLMService(function.apply(model)); //相当于通过函数式接口，构造了对应的AbstractLLMService实现类
         }
     }
 

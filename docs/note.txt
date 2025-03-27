@@ -27,3 +27,5 @@ update adi_sys_config set value = '{"url":"https://www.googleapis.com/customsear
 #初始化dashscop配置
 update adi_sys_config set value = '{"api_key":"sk-4000a9e2f25d469fb524a5174df01693"}' where name = 'dashscope_setting';
 
+INSERT INTO adi_ai_model (name, type, platform, is_enable) VALUES ('qwen-omni-turbo', 'text', 'dashscope', true);
+insert into adi_ai_model (name, title, type, platform,is_enable) values ('qwen-max','通义千问qwen-max','text','dashscope',true);

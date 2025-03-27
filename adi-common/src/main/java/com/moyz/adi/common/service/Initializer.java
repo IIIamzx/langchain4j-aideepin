@@ -35,8 +35,8 @@ public class Initializer {
      */
     @PostConstruct
     public void init() {
-        sysConfigService.loadAndCache();
-        aiModelService.init();
+        sysConfigService.loadAndCache();//加载缓存配置 sys_config
+        aiModelService.init();//初始化加载模型
     }
 
     /**
